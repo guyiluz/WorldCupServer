@@ -1,0 +1,29 @@
+{
+	"grupus": [{
+		"groupId": 0,
+		"Countrys": ["Russia", "Saudi Arabia", "Egypt", "Uruguay"]
+	}, {
+		"groupId": 1,
+		"Countrys": ["Portugal", "Spain", "Morocco", "Iran"]
+	}, {
+		"groupId": 2,
+		"Countrys": ["France", "Australia", "Peru", "Denmark"]
+	}, {
+		"groupId": 3,
+		"Countrys": ["Argentina", "Iceland", "Croatia", "Nigeria"]
+	}, {
+		"groupId": 4,
+		"Countrys": ["Brazil", "Switzerland", "Costa Rica", "Serbia"]
+	}, {
+		"groupId": 5,
+		"Countrys": ["Germany", "Mexico", "Sweden", "South Korea"]
+	}, {
+		"groupId": 6,
+		"Countrys": ["Belgium", "Panama", "Tunisia", "England"]
+	}, {
+		"groupId": 7,
+		"Countrys": ["Poland", "Senegal", "Colombia", "Japan"]
+	}]
+
+
+}
