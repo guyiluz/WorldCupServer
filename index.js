@@ -75,11 +75,14 @@ else{
 })
 
 
-app.get('/api/getUsers',(req,res)=>{
+app.get('/api/usersList',(req,res)=>{
 
-    db.db('wwc2018').collection('users').findOne({}, function (findErr, result) {
-        if (findErr) throw findErr;
-      res.send(result)
+ 
+    db.db('wwc2018').collection('users').find({}).toArray(function(err, result) {
+      if (err) throw err;
+ 
+        res.send(result)
+    
       }); 
 
 
