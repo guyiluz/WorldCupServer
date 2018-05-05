@@ -1,0 +1,10 @@
+{
+	"users:": [{
+		"userId": 0,
+        "userPassword": "",
+        "userEmail": "",
+        "userToken":""
+	}]
+
+
+}
