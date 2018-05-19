@@ -77,6 +77,8 @@ else{
 
 app.get('/api/usersList',(req,res)=>{
 
+
+
  
     db.db('wwc2018').collection('users').find({}).toArray(function(err, result) {
       if (err) throw err;
@@ -84,6 +86,45 @@ app.get('/api/usersList',(req,res)=>{
         res.send(result)
     
       }); 
+
+
+
+})
+
+
+app.post('/api/setRes',(req,res)=>{
+const id =req.body.id
+const resArry = req.body.res
+var query = {id}
+
+if(id==undefined||resArry==undefined){
+  res.send('Somting went worng')
+    return false
+}
+db.db('wwc2018').collection('results').find(query).toArray(function(err, result) {
+  if(result.length!==0){
+    
+    
+    res.send("id res is already listed")
+  
+  return false
+  }else{
+    const newUserRes={id,resArry}
+    db.db('wwc2018').collection('results').insertOne(newUserRes,function name(err,resultDb) {
+      if (err) throw err;
+      res.send('Saved new Res')
+      
+    })
+    
+  }
+
+
+})
+
+
+
+
+
 
 
 
