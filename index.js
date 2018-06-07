@@ -48,7 +48,7 @@ app.get('/groups', (req, res) => {
 })
 
 app.post('/api/addUser', (req, res) => {
-
+  app.use(cors())
 
   let result;
   const email = req.body.email
