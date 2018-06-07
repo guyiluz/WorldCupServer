@@ -29,6 +29,8 @@ function connectToDB() {
 
 
 app.use(bodyParser())
+app.use(cors())
+
 var db;
 
 
@@ -150,7 +152,6 @@ app.post('/api/setRes', (req, res) => {
 
 
 connectToDB().then(() => {
-  app.use(cors())
   app.listen(port, () => console.log('Example app listening on port 3000!'))
 
 })
