@@ -36,7 +36,6 @@ var db;
 
 
 app.use(require('./routes/api'));
-app.use(cors())
 
 const data = require('./groups.json')
 let data1 = []
@@ -48,6 +47,7 @@ app.get('/groups', (req, res) => {
 
 
 })
+app.use(cors())
 
 app.post('/api/addUser', (req, res) => {
 
