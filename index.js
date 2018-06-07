@@ -52,26 +52,45 @@ app.post('/api/addUser', (req, res)=>{
   const name=req.body.name
   var query = { email}
 
-  db.db('wwc2018').collection('users').find(query).toArray(function(err, result) {
+  db.db('wwc2018').collection('users').findOne(query, function (err, result) {
     if (err) throw err;
-  if(result.length!==0){res.send("Email is already listed")}
-else{
+    if (result.length !== 0) {
 
-  var newUser = { name,email};
-  db.db('wwc2018').collection('users').insertOne(newUser,function (err, resultDb) {
-    if (err) throw err;
-    const NewUserid =resultDb.ops[0]._id
+      let obj={
+        newUser:false,
+        id:result._id,
+        userBet:[]
+          }
+      res.send(JSON.stringify(obj))
 
-    res.send(NewUserid)
-  
-  })
 
-}
-  }); 
+    }
+    else {
+
+      var newUser = { name, email };
+      db.db('wwc2018').collection('users').insertOne(newUser, function (err, resultDb) {
+        if (err) throw err;
+        const NewUserid = resultDb.ops[0]._id
+
+        let obj={
+          newUser:true,
+          id:result._id
+            }
+
+
+
+        res.send(JSON.stringify(obj))
+
+      })
+
+    }
+  });
 
 
 
 })
+
+
 
 
 app.get('/api/usersList',(req,res)=>{
