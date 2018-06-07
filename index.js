@@ -8,7 +8,6 @@ const MongoClient = require('mongodb').MongoClient;
 
 const bodyParser = require('body-parser')
 const uri = "mongodb+srv://guy123:juaua123@cluster0-gzot4.mongodb.net/test"
-app.use(cors())
 
 function connectToDB() {
   return new Promise((reslove, reject) => {
@@ -37,6 +36,8 @@ var db;
 
 
 app.use(require('./routes/api'));
+app.use(cors())
+
 const data = require('./groups.json')
 let data1 = []
 app.get('/groups', (req, res) => {
