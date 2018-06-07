@@ -50,6 +50,11 @@ app.get('/groups', (req, res) => {
 app.use(cors())
 
 app.post('/api/addUser', (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader('Access-Control-Allow-Methods', '*');
+  res.setHeader("Access-Control-Allow-Headers", "*")
+
+
 
   let result;
   const email = req.body.email
