@@ -54,7 +54,7 @@ app.post('/api/addUser', (req, res)=>{
 
   db.db('wwc2018').collection('users').findOne(query, function (err, result) {
     if (err) throw err;
-    if (result.length !== 0) {
+    if (result) {
 
       let obj={
         newUser:false,
