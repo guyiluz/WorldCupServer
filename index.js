@@ -8,6 +8,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 const bodyParser = require('body-parser')
 const uri = "mongodb+srv://guy123:juaua123@cluster0-gzot4.mongodb.net/test"
+app.use(cors())
 
 function connectToDB() {
   return new Promise((reslove, reject) => {
@@ -29,7 +30,6 @@ function connectToDB() {
 
 
 app.use(bodyParser())
-app.use(cors())
 
 var db;
 
