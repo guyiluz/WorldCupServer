@@ -74,7 +74,7 @@ app.post('/api/addUser', (req, res)=>{
 
         let obj={
           newUser:true,
-          id:result._id
+          id:NewUserid
             }
 
 
