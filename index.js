@@ -29,7 +29,11 @@ function connectToDB() {
 
 
 app.use(bodyParser())
-
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 var db;
 
 
@@ -47,13 +51,9 @@ app.get('/groups', (req, res) => {
 
 
 })
-app.use(cors())
 
 app.post('/api/addUser', (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader('Access-Control-Allow-Methods', '*');
-  res.setHeader("Access-Control-Allow-Headers", "*")
-
+  
 
 
   let result;
