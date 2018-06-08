@@ -54,14 +54,37 @@ app.post('/api/addUser', (req, res)=>{
 
   db.db('wwc2018').collection('users').findOne(query, function (err, result) {
     if (err) throw err;
-    if (result) {
+    if (result!==null) {
+      var queryBet = { id:result._id.toString()}
 
-      let obj={
-        newUser:false,
-        id:result._id,
-        userBet:[]
-          }
+
+      db.db('wwc2018').collection('results').findOne(queryBet, function (err, bet) {
+        
+if(bet==null){
+  let obj={
+    newUser:false,
+    id:result._id,
+    userBet:[]
+      }
       res.send(JSON.stringify(obj))
+}else{
+
+  let obj={
+    newUser:false,
+    id:result._id,
+    userBet:bet.resArry
+      }
+      res.send(JSON.stringify(obj))
+
+
+
+}
+        
+
+        
+      });
+
+  
 
 
     }
