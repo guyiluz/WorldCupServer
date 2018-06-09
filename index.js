@@ -4,7 +4,7 @@ const fs = require('fs');
 const  port= process.env.PORT || 3000
 const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient;
-
+const path =require ('path')
 const bodyParser = require('body-parser')
 const uri = "mongodb+srv://guy123:juaua123@cluster0-gzot4.mongodb.net/test"
 
@@ -24,11 +24,18 @@ function connectToDB() {
 
 
 
-
+ app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser())
 var db; 
 
 
+app.get('/',(req,res)=>{
+  
+  res.sendFile(path.join(__dirname + '/public/index2.html'));
+
+
+
+})
 
 
 app.use(require('./routes/api')); 

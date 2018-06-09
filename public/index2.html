@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>World cup bet 2018</title>
+</head>
+<body>
+  <div class="navbar navbar-default">
+    <form class="navbar-form">
+      <div class="form-group">
+        <input type="text" class="form-control" id="nameInput" placeholder="Full Name">
+        <input type="email" class="form-control" id="emailInput" placeholder="E-mail">
+      </div>
+      <button type="button" class="btn btn-default" id="startBtn">Submit</button>
+    </form>
+  </div>
+  <div class="wait-bar">
+    <br>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" id="main-section">
+      <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <div class="row">
+            <div class="side-bar">
+              <img class="logo" src="http://relkonsport.com/wp-content/uploads/2017/08/bg__fifa.jpg" alt="">
+              <h1 class="name" id="showName"></h1>
+              <ul class="rules">
+                <li><h5>The Rules:</h5></li>
+                <li>For each correct team to reach the second round (16 teams) 0.25 points per team</li>
+                <li>For each correct team to reach the quarter finals (8 teams) 0.5 points per team</li>
+                <li>For each correct team to reach the semi finals (4 teams) 1 point per team</li>
+                <li>For each correct team to reach the final (2 teams) 2 points per team</li>
+                <li>For the winner 4 points</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <div class="row">
+            <main>
+              <div class="stage-container group-pick-section">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <h4 class="stage-title">Group Stage: drag and sort countries in the group stage - 1st and 2nd places will move forword:</h4>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Group 1</h5>
+                          <ol class="group-list" id="group1">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ol>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Group 2</h5>
+                          <ol class="group-list" id="group2">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ol>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Group 3</h5>
+                          <ol class="group-list" id="group3">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ol>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Group 4</h5>
+                          <ol class="group-list" id="group4">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ol>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="stage-container group-pick-section">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Group 5</h5>
+                          <ol class="group-list" id="group5">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ol>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Group 6</h5>
+                          <ol class="group-list" id="group6">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ol>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Group 7</h5>
+                          <ol class="group-list" id="group7">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ol>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Group 8</h5>
+                          <ol class="group-list" id="group8">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ol>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="stage-container">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <h4 class="stage-title">Top Sixteen: pick the winnig team</h4>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Top Sixteen 1</h5>
+                          <ul class="group-list" id="topSixteen1">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Top Sixteen 2</h5>
+                          <ul class="group-list" id="topSixteen2">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Top Sixteen 3</h5>
+                          <ul class="group-list" id="topSixteen3">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Top Sixteen 4</h5>
+                          <ul class="group-list" id="topSixteen4">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="stage-container">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Top Sixteen 5</h5>
+                          <ul class="group-list" id="topSixteen5">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Top Sixteen 6</h5>
+                          <ul class="group-list" id="topSixteen6">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Top Sixteen 7</h5>
+                          <ul class="group-list" id="topSixteen7">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="group-container">
+                          <h5 class="group-title">Top Sixteen 8</h5>
+                          <ul class="group-list" id="topSixteen8">
+                            <li class="list-item"></li>
+                            <li class="list-item"></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stage-container">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <h4 class="stage-title">1/4 Final: pick the winnig team</h4>
+                        <div class="col-md-3">
+                          <div class="group-container">
+                            <h5 class="group-title">1/4 Final 1</h5>
+                            <ul class="group-list" id="qtr1">
+                              <li class="list-item"></li>
+                              <li class="list-item"></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="group-container">
+                            <h5 class="group-title">1/4 Final 2</h5>
+                            <ul class="group-list" id="qtr2">
+                              <li class="list-item"></li>
+                              <li class="list-item"></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="group-container">
+                            <h5 class="group-title">1/4 Final 3</h5>
+                            <ul class="group-list" id="qtr3">
+                              <li class="list-item"></li>
+                              <li class="list-item"></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="group-container">
+                            <h5 class="group-title">1/4 Final 4</h5>
+                            <ul class="group-list" id="qtr4">
+                              <li class="list-item"></li>
+                              <li class="list-item"></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stage-container">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <h4 class="stage-title">1/2 Final: pick the winnig team</h4>
+                          <div class="col-md-3">
+                            <div class="group-container">
+                              <h5 class="group-title">1/2 Final 1</h5>
+                              <ul class="group-list" id="semi1">
+                                <li class="list-item"></li>
+                                <li class="list-item"></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="group-container">
+                              <h5 class="group-title">1/2 Final 2</h5>
+                              <ul class="group-list" id="semi2">
+                                <li class="list-item"></li>
+                                <li class="list-item"></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <div class="stage-container">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <h4 class="stage-title">Finals: pick the winnig team</h4>
+                        <div class="col-md-3">
+                          <div class="group-container">
+                            <h5 class="group-title">Finals</h5>
+                            <ul class="group-list" id="fin">
+                              <li class="list-item"></li>
+                              <li class="list-item"></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="group-container" id="winSquare">
+                              <h5 class="group-title">The Winning Team</h5>
+                              <h4 id="win"></h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stage-container">
+                    <div class="container-fluid">
+                      <div class="btn-container">
+                        <div class="row">
+                          <div class="col-md-3">
+                              <button type="button" class="btn btn-default btn-lg btn-success" id="submitBtn">Submit</button>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/app2.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+body,html{
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  user-select: none;
+}
+
+
+.stage-container{
+  background:   linear-gradient(-45deg, #ffffff 0%,#efefef 100%);
+  padding: 30px 15px 0px 15px;
+}
+
+.name{
+  font-family: 'Permanent Marker', cursive;
+  position: absolute;
+  text-align: center;
+  width: 180px;
+  font-size: 17px;
+  color: #fff;
+  border-radius: 50%;
+  transform: rotate(-12deg);
+  top: 16px;
+  left: -16px;
+  opacity: .9;
+}
+
+.logo{
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.rules{
+  padding: 15px 40px;
+  display: block;
+  font-size: 14px;
+  margin-top: 20px;
+  color: #1D1F20;
+  li:not(:first-child){
+    margin-top: 15px;
+  }
+}
+
+
+
+.group-container{
+  background: #fff;
+  padding: 30px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.btn-container{
+  background:   linear-gradient(-45deg, #ffffff 0%,#efefef 100%);
+  padding: 30px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.group-list{
+  padding: 0;
+}
+
+.group-title{
+  margin-bottom: 30px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  opacity:.7;
+}
+
+.list-item{
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.13);
+  list-style-position: inside;
+}
+
+ul .list-item{
+  list-style-type: none;
+}
+
+.stage-title{
+  font-size: 16px;
+  margin-left: 15px;
+    opacity: .6;
+    margin-bottom: 30px;
+}
+
+.group-pick-section ol li:nth-child(-n+2){
+  border: gray solid 1px;
+}
+
+.wait-bar, #main-section {
+  display: none;
+}
+
+#winSquare {
+  display: none;
+  text-align: center;
+  background-color: gold;
+  color: black;
+}
+
+#win {
+  text-transform: uppercase;
+  text-align: center;
+  color: black;
+}
+
+#topSixteen1 .ui-selecting { background: #FECA40; }
+#topSixteen1 .ui-selected { background: #F39814; color: white; }
+#topSixteen2 .ui-selecting { background: #FECA40; }
+#topSixteen2 .ui-selected { background: #F39814; color: white; }
+#topSixteen3 .ui-selecting { background: #FECA40; }
+#topSixteen3 .ui-selected { background: #F39814; color: white; }
+#topSixteen4 .ui-selecting { background: #FECA40; }
+#topSixteen4 .ui-selected { background: #F39814; color: white; }
+#topSixteen5 .ui-selecting { background: #FECA40; }
+#topSixteen5 .ui-selected { background: #F39814; color: white; }
+#topSixteen6 .ui-selecting { background: #FECA40; }
+#topSixteen6 .ui-selected { background: #F39814; color: white; }
+#topSixteen7 .ui-selecting { background: #FECA40; }
+#topSixteen7 .ui-selected { background: #F39814; color: white; }
+#topSixteen8 .ui-selecting { background: #FECA40; }
+#topSixteen8 .ui-selected { background: #F39814; color: white; }
+
+#qtr1 .ui-selecting { background: #FECA40; }
+#qtr1 .ui-selected { background: #F39814; color: white; }
+#qtr2 .ui-selecting { background: #FECA40; }
+#qtr2 .ui-selected { background: #F39814; color: white; }
+#qtr3 .ui-selecting { background: #FECA40; }
+#qtr3 .ui-selected { background: #F39814; color: white; }
+#qtr4 .ui-selecting { background: #FECA40; }
+#qtr4 .ui-selected { background: #F39814; color: white; }
+
+#semi1 .ui-selecting { background: #FECA40; }
+#semi1 .ui-selected { background: #F39814; color: white; }
+#semi2 .ui-selecting { background: #FECA40; }
+#semi2 .ui-selected { background: #F39814; color: white; }
+
+#fin .ui-selecting { background: #FECA40; }
+#fin .ui-selected { background: #F39814; color: white; }
