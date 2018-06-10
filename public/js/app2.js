@@ -231,49 +231,56 @@ var createPicksJson = () => {
 }
 
 $('#submitBtn').click(function(){
-    var count = 0;
-    console.log(count);
-    for(var i = 1 ; i < 9 ; i++){
-        if($('#topSixteen' + i + ' li').hasClass('ui-selected')){
-            continue;
-        } else {
-            count++
+    var makeSure = confirm("you are about to submit your bet. are you sure?")
+    if(makeSure){
+        var count = 0;
+        console.log(count);
+        for(var i = 1 ; i < 9 ; i++){
+            if($('#topSixteen' + i + ' li').hasClass('ui-selected')){
+                continue;
+            } else {
+                count++
+            }
         }
-    }
-    console.log(count);
-    for(var i = 1 ; i < 5 ; i++){
-        if($('#qtr' + i + ' li').hasClass('ui-selected')){
-            continue;
-        } else {
-            count++
+        console.log(count);
+        for(var i = 1 ; i < 5 ; i++){
+            if($('#qtr' + i + ' li').hasClass('ui-selected')){
+                continue;
+            } else {
+                count++
+            }
         }
-    }
-    console.log(count);
-    for(var i = 1 ; i < 3 ; i++){
-        if($('#semi' + i + ' li').hasClass('ui-selected')){
-            continue;
-        } else {
-            count++
+        console.log(count);
+        for(var i = 1 ; i < 3 ; i++){
+            if($('#semi' + i + ' li').hasClass('ui-selected')){
+                continue;
+            } else {
+                count++
+            }
         }
-    }
-    console.log(count);
-    if(count > 0) {
-        alert('not finished');
-        console.log('alert')
+        console.log(count);
+        if(count > 0) {
+            alert('not finished');
+            console.log('alert')
+        } else {
+            createPicksJson();
+            console.log('json');
+            localStorage.setItem('localUserBet', resJson);
+            fetch('https://wwc2018.herokuapp.com/api/setRes', {
+                method: 'POST',
+                body: resJson,
+                headers: new Headers({
+                'Content-Type': 'application/json'
+                })
+            }).then(aaa => aaa.text())
+            .then(response => {
+                console.log(response)
+                $('#main-section').css('display', 'none');
+                $('.tnkuGif').css('display', 'block');
+            });
+        }
     } else {
-        createPicksJson();
-        console.log('json');
-        localStorage.setItem('localUserBet', resJson);
-        fetch('https://wwc2018.herokuapp.com/api/setRes', {
-            method: 'POST',
-            body: resJson,
-            headers: new Headers({
-              'Content-Type': 'application/json'
-            })
-          }).then(aaa => aaa.text())
-          .then(response => {
-            console.log(response)
-        });
+        alert('Check again and then submit.')
     }
 });
 
