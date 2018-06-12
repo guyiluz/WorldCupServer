@@ -5,6 +5,12 @@ var userLogin = {
     email: ''
   }
 var userDataJson;
+
+function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+  };
+
 var startProcess = () => {
     fetch('https://wwc2018.herokuapp.com/groups')
         .then(function(grpData){
@@ -26,48 +32,52 @@ var setStart = () => {
 
 //send the user data to the server and get id back
 $('#startBtn').click(function(){
-    userLogin.name = $('#nameInput').val();
-    userLogin.email = $('#emailInput').val();
-    userLoginJson = JSON.stringify(userLogin);
-    $('.wait-bar').css("display", "block");
-    $('#startBtn').attr('disabled', 'disabled');
+    if(isEmail($('#emailInput').val()) && $('#nameInput').val().length > 0){
+        userLogin.name = $('#nameInput').val();
+        userLogin.email = $('#emailInput').val();
+        userLoginJson = JSON.stringify(userLogin);
+        $('.bigPic').css("display", "none");
+        $('.wait-bar').css("display", "block");
+        $('#startBtn').attr('disabled', 'disabled');
 
-    fetch('https://wwc2018.herokuapp.com/api/addUser', {
-        method: 'POST',
-        body: userLoginJson,
-        headers: new Headers({
-          'Content-Type': 'application/json'
-        })
-      }).then(data => data.text())
-      .then(userData => {
-        console.log(userData)
-        id = JSON.parse(userData).id;
-        console.log('Success:', userData);
-        $('#showName').text("HI " + $("#nameInput").val());
-        
-        if(JSON.parse(userData).newUser) {
-            startProcess();
-        } else { 
-            if(localStorage.getItem('localUserBet') != null && JSON.parse(localStorage.getItem('localUserBet')).id == id){
-                var loclUsrBet = JSON.parse(localStorage.getItem('localUserBet'));
-                console.log(loclUsrBet);
-                showUserBet(loclUsrBet.res)
-            } else if (JSON.parse(userData).userBet.constructor === Array){
-                if (JSON.parse(userData).userBet.length == 0){
-                    startProcess();
+        fetch('https://wwc2018.herokuapp.com/api/addUser', {
+            method: 'POST',
+            body: userLoginJson,
+            headers: new Headers({
+            'Content-Type': 'application/json'
+            })
+        }).then(data => data.text())
+        .then(userData => {
+            console.log(userData)
+            id = JSON.parse(userData).id;
+            console.log('Success:', userData);
+            $('#showName').text("HI " + $("#nameInput").val());
+            
+            if(JSON.parse(userData).newUser) {
+                startProcess();
+            } else { 
+                if(localStorage.getItem('localUserBet') != null && JSON.parse(localStorage.getItem('localUserBet')).id == id){
+                    var loclUsrBet = JSON.parse(localStorage.getItem('localUserBet'));
+                    console.log(loclUsrBet);
+                    showUserBet(loclUsrBet.res)
+                } else if (JSON.parse(userData).userBet.constructor === Array){
+                    if (JSON.parse(userData).userBet.length == 0){
+                        startProcess();
+                    }
+                } else if (JSON.parse(userData).userBet.constructor === Object){
+                    if (JSON.parse(userData).userBet.groupss.length == 0){
+                        startProcess();
+                    } else {
+                    console.log("showbet")
+                    showUserBet(JSON.parse(userData).userBet);
                 }
-            } else if (JSON.parse(userData).userBet.constructor === Object){
-                if (JSON.parse(userData).userBet.groupss.length == 0){
-                    startProcess();
-                } else {
-                console.log("showbet")
-                showUserBet(JSON.parse(userData).userBet);
             }
         }
+            
+        });
+    } else {
+        alert("Please Enter Full Name and Valid E-mail Address")
     }
-        
-    });
-
 });
 
 
