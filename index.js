@@ -163,6 +163,7 @@ db.db('wwc2018').collection('results').find(query).toArray(function(err, result)
     db.db('wwc2018').collection('results').insertOne(newUserRes,function name(err,resultDb) {
       if (err) throw err;
       res.send('Saved new Res')
+
       
     })
     
