@@ -146,10 +146,10 @@ var buildPage = () => {
 
     pickQtr("#topSixteen1", "#qtr1", 1);
     pickQtr("#topSixteen2", "#qtr1", 2);
-    pickQtr('#topSixteen3', '#qtr2', 1);
-    pickQtr('#topSixteen4', '#qtr2', 2);
-    pickQtr('#topSixteen5', '#qtr3', 1);
-    pickQtr('#topSixteen6', '#qtr3', 2);
+    pickQtr('#topSixteen3', '#qtr3', 1);
+    pickQtr('#topSixteen4', '#qtr3', 2);
+    pickQtr('#topSixteen5', '#qtr2', 1);
+    pickQtr('#topSixteen6', '#qtr2', 2);
     pickQtr('#topSixteen7', '#qtr4', 1);
     pickQtr('#topSixteen8', '#qtr4', 2);
 
