@@ -30,7 +30,7 @@ app.use(bodyParser())
 var db; 
 
 
-app.get('/',(req,res)=>{
+app.get('/home',(req,res)=>{
   
   
   res.sendFile(path.join(__dirname + '/public/index2.html'));
