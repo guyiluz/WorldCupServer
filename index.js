@@ -185,6 +185,6 @@ db.db('wwc2018').collection('results').find(query).toArray(function(err, result)
 
 connectToDB().then(()=>{
 
-  app.listen(80, () => console.log('Example app listening on port 3000!'))
+  app.listen(3000, () => console.log('Example app listening on port 3000!'))
 
 })
